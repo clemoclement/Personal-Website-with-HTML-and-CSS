@@ -39,7 +39,7 @@ const projects = [
     description: "Browse on our site and check out our latest stock. Check out shoes by size, colour and category, with a cart and secure payment checkout that supports M-Pesa payments prompts.",
     tech: ["Jordans", "Chelsea Boots", "Nikes", "Vans", "Adidas", "Puma", "Converse", "Reebok"],
     stats: [["1,240", "Pairs listed"], ["320", "Customers"], ["95%", "Checkout success"]],
-    emoji: "👟",
+    image: "images/sneakers1.webp",
     link: "#"
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     featured: false,
     description: "A web-based tool that tracks stock by shoe model, size and colour, flags low stock, and records sales and deliveries.",
     tech: ["HTML", "CSS", "JavaScript"],
-    emoji: "📦",
+    image: "images/inventory.jpg",
     link: "#"
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     featured: false,
     description: "A responsive ordering page where customers pick a pair, choose their size, place an order, make seamless payments and follow its status of delivery.",
     tech: ["HTML", "CSS", "JavaScript"],
-    emoji: "🛍️",
+    image: "images/onlinepayment.jpg",
     link: "#"
   }
 ];
@@ -125,8 +125,8 @@ for (const p of projects) {
           <ul class="tags">${techTags(p.tech)}</ul>
           <a href="${p.link}" class="btn btn--primary">View Project &rarr;</a>
         </div>
-        <div class="featured__visual" aria-hidden="true">
-          <span class="featured__emoji">${p.emoji}</span>
+       <div class="featured__visual">
+  <img class="featured__img" src="${p.image}" alt="${p.title}">
           <div class="stats">${stats}</div>
         </div>
       </article>`;
@@ -134,7 +134,7 @@ for (const p of projects) {
     const card = document.createElement("article");
     card.className = "project";
     card.innerHTML = `
-      <div class="project__visual" aria-hidden="true">${p.emoji}</div>
+     <div class="project__visual"><img src="${p.image}" alt="${p.title}"></div>
       <h3>${p.title}</h3>
       <p>${p.description}</p>
       <ul class="tags">${techTags(p.tech)}</ul>
